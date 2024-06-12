@@ -1,0 +1,267 @@
+/* Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html{height:100%}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+:root{
+    /* Colors */
+    --yellow3: #F1DE9C;
+    --yellow: #F9DC75;
+    --yellow2: #F5C61D;
+    --yellow4: #584504;
+    --black: #312702;
+    --black2: #7C7765;
+    --black3: #A2A097;
+    --black4: #EBEBEB;
+    --blackde: linear-gradient(0deg, rgba(235,234,234,1) 0%, rgba(229,227,221,1) 100%);
+    --yellowde: linear-gradient(0deg, #F5C61D 100%, #F9DC74 100%);
+
+
+
+    /* Vars */
+
+    --index:calc(1vh + 1vw);
+
+    /* Fonts */
+
+    --h1: normal 400 calc(var(--index)*1.8) 'JetBrains Mono', monospace;
+    --h2: normal 400 calc(var(--index)*1.5) 'JetBrains Mono', monospace;
+    --h3: normal 400 calc(var(--index)*0.9) 'JetBrains Mono', monospace;
+    --h4: normal 400 calc(var(--index)*0.8) 'JetBrains Mono', monospace;
+    --h5: normal 400 calc(var(--index)*.3) 'JetBrains Mono', monospace;
+    --h6: normal 400 calc(var(--index)*.2) 'JetBrains Mono', monospace;
+    --p: normal 400 calc(var(--index)*0.5) 'JetBrains Mono', monospace;
+    --a: normal 700 calc(var(--index)*0.5) 'JetBrains Mono', monospace;
+
+
+
+}
+
+body{
+    background-color: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.culculator{
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--index)*12.2);
+    height: calc(var(--index)*27);
+    background-color: #fff;
+    border-radius: calc(var(--index)*0.5);
+    padding: calc(var(--index)*0.5);
+    justify-content: space-between;
+    gap: calc(var(--index)*0.5);
+}
+
+
+button{
+    width: calc(var(--index)*2.7);
+    height: calc(var(--index)*2.7);
+    border-radius: 50%;
+    font: var(--h3);
+}
+
+button.history{
+    background-image: url(/assets/Clock.svg);
+    background-color: #00000000;
+    background-size: cover;
+    width: calc(var(--index)*1);
+    height: calc(var(--index)*1);
+    border: none;
+}
+
+button.history.active{
+    background-image: url(/assets/Clock-Active.svg);
+}
+
+
+button.delete{
+    background-image: url(/assets/Tag.svg);
+    background-color: #00000000;
+    background-size: cover;
+    width: calc(var(--index)*1);
+    height: calc(var(--index)*1);
+    border: none;
+}
+
+.buttons-actions{
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--index)*.1);
+    align-items: center;
+    justify-content: center;
+}
+
+button.sign{
+    border:none;
+    background: linear-gradient(340deg, #EBEAEA00 0%, #E5E3DD 100%);
+    box-shadow: 0px calc(var(--index)*.2) calc(var(--index)*.2) #B5A07740, calc(var(--index)*.2) 0px calc(var(--index)*.2) #e2d3b340;
+}
+button.operators{
+    background-color: var(--yellow3);
+    box-shadow: 0px calc(var(--index)*.2) calc(var(--index)*.2) #B5A07740, calc(var(--index)*.2) 0px calc(var(--index)*.2) #e2d3b340;
+    border: none;
+}
+
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    flex-grow: 1;
+    padding: 0;
+    width: 70%;
+    font: var(--h4);
+    text-overflow: ellipsis;
+}
+
+input:focus {
+    outline: none;
+}
+
+.history{
+    width: auto;
+    height: 33%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    gap: calc(var(--index)*.1);
+}
+
+
+.history h3{
+    text-align: right;
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+h3{
+    font: var(--h3);
+    color: var(--black3)
+}
+
+button h3{
+    font: var(--h3);
+    color: var(--black)
+}
+
+h3.yellow{
+    font: var(--h3);
+    color: var(--yellow)
+}
+
+h1{
+    font: var(--h1);
+    color: var(#000)
+}
+
+h4{
+    font: var(--h4);
+    color: var(--black3)
+}
+
+
+.menu-buttons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    gap: calc(var(--index)*.3);
+    align-items: center;
+    
+}
+
+.buttons-signs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: calc(var(--index)*.1);
+    align-content: center;
+    justify-items: center;
+    flex-grow: 1;
+}
+
+.container-panels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: calc(var(--index)*.1);
+    height: 70%;
+}
+
+.buttons-actions button{
+    background-color: var(--yellow);
+    border: none;
+    box-shadow: 0px calc(var(--index)*.19) calc(var(--index)*.19) #E3D18C40;
+}
+
+
+#point{
+    flex-grow: 2;
+    border-radius: calc(var(--index)*5);
+}
+
+#equal{
+    flex-grow: 2;
+    border-radius: calc(var(--index)*5);
+    background: linear-gradient(0deg, #F9DC74 100%, #F5C61D 100%);
+    box-shadow: 0px calc(var(--index)*.19) calc(var(--index)*.19) #E3D18C40;
+}
+
+.container-panels button:hover{
+    width: calc(var(--index)*2.6);
+    height: calc(var(--index)*2.6);
+}
+
+.menu-buttons button:hover{
+    width: calc(var(--index)*0.9);
+    height: calc(var(--index)*0.9);
+}
+
+button:focus{
+    outline: none;
+}
+
+.intermediate-values{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:flex-start;
+    margin: calc(var(--index)*0.4);
+    gap: calc(var(--index)*0.3);
+    overflow: hidden;
+}
+
+.intermediate-values .value{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: calc(var(--index)*0.1);
+}
+
+.intermediate-values .value .result-line{
+    display: flex;
+    gap: calc(var(--index)*0.1);
+    align-items: center;
+
+}
+.slide.disactive{
+    display: none;
+}
